@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context>
+	<Resource
+		name="jdbc/oracle"
+		auth="Container"
+		type="javax.sql.DataSource"
+		driverClassName="oracle.jdbc.driver.OracleDriver"
+		url="jdbc:oracle:thin:@192.168.1.100:1521:xe"
+		username="c##mini"
+		password="1234"
+		maxTotal="20" 
+		maxIdle="10"
+		maxWaitMillis="-1"
+	/>
+
+	 <Resources>
+		<PreResources
+			className="org.apache.catalina.webresources.DirResourceSet"
+			webAppMount="/programImage" 
+			base="C:\\upload" />
+			<!-- webAppMount경로를 요청하면 base경로에 접근하여 파일을 찾는다 -->
+	</Resources>
+</Context>
