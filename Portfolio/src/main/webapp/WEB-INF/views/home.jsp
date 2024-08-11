@@ -3,16 +3,6 @@
 <%@ include file="header.jsp"%>
 
 <style>
-/* 전체 페이지 스타일 */
-body {
-	font-family: 'Poppins', sans-serif; /* Google Fonts로 변경 */
-	margin: 0;
-	padding: 0;
-	height: 1000px;
-	background-color: #f0f4f8; /* 밝은 회색 배경 */
-	color: #333; /* 기본 텍스트 색상 */
-	transition: background-color 0.5s ease;
-}
 
 /* 컨테이너 스타일 */
 .container {
@@ -40,6 +30,7 @@ body {
 
 .section:hover {
 	background-color: #f1f3f4; /* 라이트 그레이 */
+	cursor: pointer;
 }
 
 .section.collapsed {
@@ -78,6 +69,7 @@ body {
 	height: 168px;
 	margin-right: 20px;
 	border-radius: 12px; /* 둥근 모서리 */
+	border: 1px solid grey;
 }
 
 /* 프로필 섹션 스타일 */
@@ -135,33 +127,7 @@ body {
 }
 </style>
 
-<script>
-	document.addEventListener("DOMContentLoaded", function() {
-		var sections = document.querySelectorAll(".section:not(.profile)");
 
-		sections.forEach(function(section) {
-			section.addEventListener("click", function() {
-				if (section.classList.contains("collapsed")) {
-					section.classList.remove("collapsed");
-					section.classList.add("expanded");
-				} else {
-					section.classList.remove("expanded");
-					section.classList.add("collapsed");
-				}
-			});
-		});
-
-		// 배경색을 시간대에 따라 변경
-		var currentHour = new Date().getHours();
-		if (currentHour < 12) {
-			document.body.style.backgroundColor = "#e0f7fa"; // 오전: 밝은 청록색
-		} else if (currentHour < 18) {
-			document.body.style.backgroundColor = "#ffecb3"; // 오후: 밝은 노란색
-		} else {
-			document.body.style.backgroundColor = "#cfd8dc"; // 저녁: 밝은 회색
-		}
-	});
-</script>
 
 </head>
 <body>
@@ -232,7 +198,7 @@ body {
 								<h3>
 									KG IT BANK<br>웹 융합 SW 기반 빅데이터 솔루션 개발자 양성 과정 수료
 								</h3>
-								<p>2022.08 ~ 2023.05</p>
+								<p>2023.10 ~ 2024.04</p>
 							</div>
 						</div>
 					</li>

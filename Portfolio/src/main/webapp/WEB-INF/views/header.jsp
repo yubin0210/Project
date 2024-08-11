@@ -15,6 +15,17 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
 <style>
+/* 전체 페이지 스타일 */
+body {
+	font-family: 'Poppins', sans-serif; /* Google Fonts로 변경 */
+	margin: 0;
+	padding: 0;
+	height: 1000px;
+	background-color: #f0f4f8; /* 밝은 회색 배경 */
+	color: #333; /* 기본 텍스트 색상 */
+	transition: background-color 0.5s ease;
+}
+
 /* 헤더 스타일 */
 header {
     background-color: #292b2c; /* 어두운 회색 */
@@ -24,6 +35,10 @@ header {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 헤더에 그림자 추가 */
 }
 
+header h1 a {
+	text-decoration: none;
+	color: #fff;
+}
 /* 네비게이션 스타일 */
 nav ul {
     list-style-type: none;
@@ -49,6 +64,35 @@ nav ul li a:hover {
 }
 
 </style>
+
+<script>
+	document.addEventListener("DOMContentLoaded", function() {
+		var sections = document.querySelectorAll(".section:not(.profile)");
+
+		sections.forEach(function(section) {
+			section.addEventListener("click", function() {
+				if (section.classList.contains("collapsed")) {
+					section.classList.remove("collapsed");
+					section.classList.add("expanded");
+				} else {
+					section.classList.remove("expanded");
+					section.classList.add("collapsed");
+				}
+			});
+		});
+
+		// 배경색을 시간대에 따라 변경
+		var currentHour = new Date().getHours();
+		if (currentHour < 12) {
+			document.body.style.backgroundColor = "#e0f7fa"; // 오전: 밝은 청록색
+		} else if (currentHour < 18) {
+			document.body.style.backgroundColor = "#ffecb3"; // 오후: 밝은 노란색
+		} else {
+			document.body.style.backgroundColor = "#cfd8dc"; // 저녁: 밝은 회색
+		}
+	});
+</script>
+
 </head>
 <body>
 
@@ -61,7 +105,8 @@ nav ul li a:hover {
             <li><a href="${cpath}/projects">Project Experience</a></li>
         </ul>
     </nav>
-    <h1>Yubin's portfolio</h1>
+    <h1><a href="${cpath}/">Yubin's portfolio</a></h1>
+    
 </header>
 </body>
 </html>

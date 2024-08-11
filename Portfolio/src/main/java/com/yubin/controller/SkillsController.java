@@ -1,0 +1,15 @@
+package com.yubin.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+@RequestMapping("/skills")
+public class SkillsController {
+
+	@GetMapping
+	public String skills() {
+		return "skills";
+	}
+}
