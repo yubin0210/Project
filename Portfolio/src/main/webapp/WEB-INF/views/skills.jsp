@@ -9,7 +9,7 @@ body {
 .page-title {
 	position: absolute;
 	top: 142px;
-    left: 400px;
+    left: 500px;
     text-align: center;
     margin: 40px 0;
 }

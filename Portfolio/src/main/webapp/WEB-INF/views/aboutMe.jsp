@@ -11,7 +11,7 @@ body {
 .page-title {
 	position: absolute;
 	top: 160px;
-    left: 420px;
+    left: 520px;
 	max-width: 900px;
     text-align: center;
     margin: 20px auto;

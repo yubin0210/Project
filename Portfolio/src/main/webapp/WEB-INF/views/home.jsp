@@ -127,7 +127,23 @@
 }
 </style>
 
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+	var sections = document.querySelectorAll(".section:not(.profile)");
 
+	sections.forEach(function(section) {
+		section.addEventListener("click", function() {
+			if (section.classList.contains("collapsed")) {
+				section.classList.remove("collapsed");
+				section.classList.add("expanded");
+			} else {
+				section.classList.remove("expanded");
+				section.classList.add("collapsed");
+			}
+		});
+	});
+});
+</script>
 
 </head>
 <body>
